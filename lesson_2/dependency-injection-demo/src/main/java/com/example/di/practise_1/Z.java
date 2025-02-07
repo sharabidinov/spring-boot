@@ -1,17 +1,12 @@
 package com.example.di.practise_1;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Component;
-
-@Component
 public class Z {
-    @Autowired
-    private X x;
-    @Autowired
-    private @Lazy T t;
+    private final X x;
+    private final T t;
 
-    public Z() {
+    public Z(X x, T t) {
+        this.x = x;
+        this.t = t;
         System.out.println(this);
     }
 }

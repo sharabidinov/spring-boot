@@ -1,16 +1,12 @@
 package com.example.di.practise_1;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-@Component
 public class B {
-    @Autowired
-    private X x;
-    @Autowired
-    private Z z;
+    private final X x;
+    private final Z z;
 
-    public B() {
+    public B(X x, Z z) {
+        this.x = x;
+        this.z = z;
         System.out.println(this);
     }
 }
