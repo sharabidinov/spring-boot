@@ -1,13 +1,13 @@
 package com.example.di.mvc;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
-@Component
+@Controller
 public class Viewer {
-    private final Controller controller;
-
-    public Viewer(Controller controller) {
-        this.controller = controller;
+    @Autowired
+    private com.example.di.mvc.Controller controller;
+    public Viewer() {
         System.out.println(this);
     }
 }

@@ -1,13 +1,14 @@
 package com.example.di.mvc;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class Controller {
-    private final Model model;
+    @Autowired
+    private Model model;
 
-    public Controller(Model model) {
-        this.model = model;
+    public Controller() {
         System.out.println(this);
     }
 }

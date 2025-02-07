@@ -1,13 +1,15 @@
 package com.example.di.mvc;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class Model {
-    private final Viewer viewer;
+    @Autowired
+    private @Lazy Viewer viewer;
 
-    public Model(Viewer viewer) {
-        this.viewer = viewer;
+    public Model() {
         System.out.println(this);
     }
 }
